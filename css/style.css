@@ -1,0 +1,38 @@
+:root{
+    --nr-bg-grey: #dddddd;
+    --nr-primary: #29b1dd;
+    --nr-blue: #0000ff;
+    --nr-orange: #ffa500;
+    --nr-fucsia: #800080;
+}
+header{
+    height: 60px;
+}
+main{
+    background-color: var(--nr-bg-grey);
+    height: calc(100vh - 60px);
+}
+
+h1{
+    color: var(--nr-primary);
+}
+
+nav{
+    background-color: var(--nr-primary);
+}
+
+.card{
+    margin-bottom: 6rem;
+}
+
+.icon-blue{
+    color: var(--nr-blue);
+}
+
+.icon-orange{
+    color: var(--nr-orange);
+}
+
+.icon-fucsia{
+    color: var(--nr-fucsia);
+}

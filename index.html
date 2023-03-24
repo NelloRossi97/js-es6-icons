@@ -8,9 +8,30 @@
         <link rel="stylesheet" href="./css/style.css">
         <title>FontIcons by type</title>
     </head>
-    <body>
-
-
+    <body class="overflow-hidden">
+        <div class="wrapper vh-100">
+            <header>
+                <h1 class="fw-bold m-3">FontIcons</h1>
+            </header>
+            <main class="overflow-auto">
+                <nav class="d-flex justify-content-center align-content-center align-items-center">
+                    <h2 class="text-uppercase text-white fs-3 my-4 me-3">Filtra per tipo</h2>
+                    <select name="filter" id="filter">
+                        <option value="all">All</option>
+                    </select>
+                </nav>
+                <div class="row flex-wrap m-4">
+                    <div class="col-3">
+                        <div class="card d-flex justify-content-center align-items-center p-3">
+                            <i class="fa-solid fa-cat fs-1"></i>
+                            <h4 class="text-uppercase fs-6">cat</h4>
+                        </div>
+                    </div>
+                    
+                </div>
+            </main>
+        </div>
+        
 
         <script src="./js/script.js"></script>
     </body>
