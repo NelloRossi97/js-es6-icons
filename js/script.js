@@ -144,12 +144,41 @@ function createCard(element){
     return col;
 }
 
+function addOptions(){
+    const select = document.getElementById('filter');
+
+    const optionAnimal = document.createElement('option');
+    optionAnimal.value = "animal";
+    optionAnimal.innerText = "animal";
+
+    const optionVegetables = document.createElement('option');
+    optionVegetables.value = "vegetables";
+    optionVegetables.innerText = "vegetables";
+
+    const optionUser = document.createElement('option');
+    optionUser.value = "user";
+    optionUser.innerText = "user";
+
+    select.append(optionAnimal, optionVegetables, optionUser);
+}
+
+addOptions(icons);
+
+let cards = [];
+
+console.log(cards);
+
 function init(){
     const cardContainer = document.querySelector('.row');
     for (let i = 0; i < icons.length; i++){
         const template = createCard(icons[i]);
         cardContainer.append(template);
-    }   
+        cards.push(template);
+    }
+}
+
+function selectType(){
+    selectedValue = sele
 }
 
 init();
