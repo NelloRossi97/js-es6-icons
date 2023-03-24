@@ -134,7 +134,7 @@ function createCard(element){
     col.append(card);
 
     const i = document.createElement('i');
-    i.classList.add(`${element.prefix+element.family}`, `${element.prefix + element.name}`, 'fs-1', `$`);
+    i.classList.add(`${element.prefix+element.family}`, `${element.prefix + element.name}`, 'fs-1', `${element.color}`);
 
     const h4 = document.createElement('h4');
     h4.classList.add('text-uppercase', 'fs-6');
