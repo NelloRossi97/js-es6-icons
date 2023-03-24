@@ -125,34 +125,39 @@ const icons = [
 ];
 
 
-function createCard(icon){
-    const col3 = document.createElement('div');
-    col3.classList.add('col-3');
+function createCard(element){
+    const col = document.createElement('div');
+    col.classList.add('col');
 
     const card = document.createElement('div');
     card.classList.add('card', 'd-flex', 'justify-content-center', 'align-items-center', 'p-3');
-    col3.append(card);
+    col.append(card);
 
     const i = document.createElement('i');
-    i.classList.add(`${icon.prefix+icon.family}`, `${icon.prefix + icon.name}`, 'fs-1');
+    i.classList.add(`${element.prefix+element.family}`, `${element.prefix + element.name}`, 'fs-1');
 
     const h4 = document.createElement('h4');
     h4.classList.add('text-uppercase', 'fs-6');
-    h4.innerText = `${icon.name}`;
+    h4.innerText = `${element.name}`;
 
     card.append(i,h4);
-    return col3;
+    return col;
 }
+
+// function addOptions(element){
+//     const select = document.getElementById('filter');
+
+//     const option = document.createElement('option');
+//     option.value = element.type;
+//     option.innerText = element.type;
+// }
 
 function init(){
     const cardContainer = document.querySelector('.row');
-    let content = "";
     for (let i = 0; i < icons.length; i++){
         const template = createCard(icons[i]);
-        console.log(template);
-        content += template;
-    }
-    cardContainer.innerHTML = content;
+        cardContainer.append(template);
+    }   
 }
 
 init();
