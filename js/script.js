@@ -134,7 +134,7 @@ function createCard(element){
     col.append(card);
 
     const i = document.createElement('i');
-    i.classList.add(`${element.prefix+element.family}`, `${element.prefix + element.name}`, 'fs-1');
+    i.classList.add(`${element.prefix+element.family}`, `${element.prefix + element.name}`, 'fs-1', `$`);
 
     const h4 = document.createElement('h4');
     h4.classList.add('text-uppercase', 'fs-6');
@@ -143,14 +143,6 @@ function createCard(element){
     card.append(i,h4);
     return col;
 }
-
-// function addOptions(element){
-//     const select = document.getElementById('filter');
-
-//     const option = document.createElement('option');
-//     option.value = element.type;
-//     option.innerText = element.type;
-// }
 
 function init(){
     const cardContainer = document.querySelector('.row');
