@@ -9,6 +9,8 @@ BONUS
 1- modificare la struttura dati fornita e valorizzare la proprietà "color" in modo dinamico: generare in modo casuale un codice colore, sapendo che la notazione esadecimale è formata dal simbolo "#" seguito da 6 caratteri alfanumerici compresi tra 0 e 9 e A e F.
 2- popolare le options della select della milestone 3 dinamicamente.
 */
+
+// array of objects icons
 const icons = [
     {
         name: 'cat',
@@ -124,7 +126,7 @@ const icons = [
     }
 ];
 
-
+//function to create a card
 function createCard(element){
     const col = document.createElement('div');
     col.classList.add('col');
@@ -133,6 +135,7 @@ function createCard(element){
     card.classList.add('card', 'd-flex', 'justify-content-center', 'align-items-center', 'p-3');
     col.append(card);
 
+    //adding classes using objects attributes
     const i = document.createElement('i');
     i.classList.add(`${element.prefix+element.family}`, `${element.prefix + element.name}`, 'fs-1', `${element.color}`);
 
@@ -144,30 +147,26 @@ function createCard(element){
     return col;
 }
 
+//function to add dinamically options to the select
 function addOptions(){
     const select = document.getElementById('filter');
-
-    const optionAnimal = document.createElement('option');
-    optionAnimal.value = "animal";
-    optionAnimal.innerText = "animal";
-
-    const optionVegetables = document.createElement('option');
-    optionVegetables.value = "vegetables";
-    optionVegetables.innerText = "vegetables";
-
-    const optionUser = document.createElement('option');
-    optionUser.value = "user";
-    optionUser.innerText = "user";
-
-    select.append(optionAnimal, optionVegetables, optionUser);
+    let optionsArray = [];
+    icons.forEach((icon) => {
+        if (!optionsArray.includes(icon.type)){
+            optionsArray.push(icon.type);
+            const newOption = document.createElement('option');
+            newOption.value = icon.type;
+            newOption.innerText = icon.type;
+            select.append(newOption);
+        }
+    })
 }
+addOptions();
 
-addOptions(icons);
-
+//array that contain cards
 let cards = [];
 
-console.log(cards);
-
+// function that print cards in html
 function init(){
     const cardContainer = document.querySelector('.row');
     for (let i = 0; i < icons.length; i++){
@@ -176,9 +175,4 @@ function init(){
         cards.push(template);
     }
 }
-
-function selectType(){
-    selectedValue = sele
-}
-
 init();
